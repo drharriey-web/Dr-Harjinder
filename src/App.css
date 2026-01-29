@@ -62,7 +62,7 @@ body {
 }
 
 .body-text {
-  max-width: 320px;
+  max-width: 360px;
   font-size: 14px;
   line-height: 1.5;
   opacity: 0.85;
@@ -118,6 +118,7 @@ body {
   border: 2px solid var(--gold);
   padding: 12px;
   height: 72px;
+  padding: 10px 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -135,4 +136,5 @@ body {
   outline: none;
   color: var(--text);
   font-size: 14px;
+  line-height: 1.2;
 }
