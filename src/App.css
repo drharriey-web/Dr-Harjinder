@@ -1,0 +1,138 @@
+/* Global reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Color palette */
+:root {
+  --bg: #1f3b2e;        /* deep matte green */
+  --gold: #c6a75e;     /* muted gold */
+  --text: #f4f1e8;     /* soft ivory */
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Shared screen styles */
+.screen {
+  min-height: 100vh;
+  width: 100%;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------------- ENTRY SCREEN ---------------- */
+
+.entry {
+  justify-content: center;
+  text-align: center;
+}
+
+.entry-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Circular icon */
+.icon-placeholder {
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+}
+
+/* Typography */
+.title {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.subtitle {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.body-text {
+  max-width: 320px;
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.85;
+  margin-top: 8px;
+}
+
+/* Button */
+.primary-button {
+  margin-top: auto;
+  margin-bottom: 24px;
+  padding: 12px 40px;
+  background: transparent;
+  border: 2px solid var(--gold);
+  border-radius: 6px;
+  color: var(--gold);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.primary-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---------------- PERCEPTION SCREEN ---------------- */
+
+.perception {
+  justify-content: space-between;
+}
+
+.title.top {
+  margin-top: 8px;
+}
+
+.instruction {
+  max-width: 420px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.85;
+  margin: 24px 0;
+}
+
+.cards {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Input cards */
+.card {
+  border: 2px solid var(--gold);
+  padding: 12px;
+  height: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card label {
+  font-size: 12px;
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+
+.card input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 14px;
+}
