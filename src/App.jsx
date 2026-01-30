@@ -75,7 +75,7 @@ function PerceptionScreen() {
       <h1 className="title top">Perception Check</h1>
 
       <p className="instruction">
-        Separate what you see from what you think.
+        Separate what is observed from what is assumed.
       </p>
 
       <div className="cards">
