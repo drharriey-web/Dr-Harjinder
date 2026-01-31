@@ -60,10 +60,36 @@ function SingleLineInput({ label, value, onChange }) {
   );
 }
 
-function PerceptionScreen() {
-  const [observation, setObservation] = useState("");
-  const [assumption, setAssumption] = useState("");
-  const [unknown, setUnknown] = useState("");
+function PerceptionScreen({ onEnter }) {
+  // Load from localStorage or default to empty string
+  const [observation, setObservation] = useState(() => localStorage.getItem("observation") || "");
+  const [assumption, setAssumption] = useState(() => localStorage.getItem("assumption") || "");
+  const [unknown, setUnknown] = useState(() => localStorage.getItem("unknown") || "");
+
+  // Save to localStorage on change
+  const handleObservationChange = (val) => {
+    setObservation(val);
+    localStorage.setItem("observation", val);
+  };
+
+  const handleAssumptionChange = (val) => {
+    setAssumption(val);
+    localStorage.setItem("assumption", val);
+  };
+
+  const handleUnknownChange = (val) => {
+    setUnknown(val);
+    localStorage.setItem("unknown", val);
+  };
+
+  const onReset = () => {
+    setObservation("");
+    setAssumption("");
+    setUnknown("");
+    localStorage.removeItem("observation");
+    localStorage.removeItem("assumption");
+    localStorage.removeItem("unknown");
+  };
 
   const isComplete =
     observation.length > 0 &&
@@ -82,28 +108,37 @@ function PerceptionScreen() {
         <SingleLineInput
           label="Observation"
           value={observation}
-          onChange={setObservation}
+          onChange={handleObservationChange}
         />
 
         <SingleLineInput
           label="Assumption"
           value={assumption}
-          onChange={setAssumption}
+          onChange={handleAssumptionChange}
         />
 
         <SingleLineInput
           label="Unknown"
           value={unknown}
-          onChange={setUnknown}
+          onChange={handleUnknownChange}
         />
       </div>
+      <div className="buttons-container">
+        <button
+          className="primary-button"
+          onClick={onReset}
+        >
+          RESET
+        </button>
 
-      <button
-        className="primary-button"
-        disabled={!isComplete}
-      >
-        PAUSE
-      </button>
+        <button
+          className="primary-button"
+          disabled={!isComplete}
+          onClick={onEnter}
+        >
+          PAUSE
+        </button>
+      </div>
     </div>
   );
 }
@@ -112,7 +147,7 @@ export default function App() {
   const [entered, setEntered] = useState(false);
 
   return entered ? (
-    <PerceptionScreen />
+    <PerceptionScreen onEnter={() => setEntered(false)} />
   ) : (
     <EntryScreen onEnter={() => setEntered(true)} />
   );

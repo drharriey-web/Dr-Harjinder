@@ -72,7 +72,7 @@ body {
 /* Button */
 .primary-button {
   margin-top: auto;
-  margin-bottom: 24px;
+  margin: auto 1rem 0rem 1rem;
   padding: 12px 40px;
   background: transparent;
   border: 2px solid var(--gold);
@@ -85,6 +85,11 @@ body {
 .primary-button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+.buttons-container{
+  display: flex;
+  margin-top: auto;
+  background: transparent;
 }
 
 /* ---------------- PERCEPTION SCREEN ---------------- */
