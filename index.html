@@ -19,21 +19,24 @@
     It does not add.<br>
     It subtracts noise.
   </p>
-
-  <button
-    style="
-      margin-top:32px;
-      padding:12px 28px;
-      font-size:16px;
-      background:transparent;
-      color:#f5f2e9;
-      border:1px solid #f5f2e9;
-      cursor:pointer;
-    "
-    onclick="document.getElementById('root').scrollIntoView({behavior:'smooth'})"
-  >
-    Enter
-  </button>
+<button
+  style="
+    margin-top:32px;
+    padding:12px 28px;
+    font-size:16px;
+    background:transparent;
+    color:#f5f2e9;
+    border:1px solid #f5f2e9;
+    cursor:pointer;
+  "
+  onclick="document.getElementById('feedback').style.opacity = 1"
+>
+  Enter
+</button>
+  
+    <p id="feedback" style="margin-top:24px; font-size:15px; opacity:0; transition:opacity 0.6s;">
+Pause. Notice what changes — or doesn’t.
+    </p>
     </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
