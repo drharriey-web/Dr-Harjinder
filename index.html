@@ -8,11 +8,33 @@
     <link rel="manifest" href="/manifest.json" />
   </head>
   <body>
-    <div style="padding:40px;font-family:sans-serif">
-  <h1>VANTAGE</h1>
-  <p>Psychological Instrument</p>
-  <p>App is under construction.</p>
-</div>
+  <div style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#0b1f16;color:#f5f2e9;font-family:Georgia, serif;text-align:center;padding:24px;">
+  
+
+  <h1 style="letter-spacing:2px;">VANTAGE</h1>
+
+  <p style="max-width:420px; line-height:1.6; margin-top:16px;">
+    This is not a productivity tool.<br>
+    This is a psychological instrument.<br><br>
+    It does not add.<br>
+    It subtracts noise.
+  </p>
+
+  <button
+    style="
+      margin-top:32px;
+      padding:12px 28px;
+      font-size:16px;
+      background:transparent;
+      color:#f5f2e9;
+      border:1px solid #f5f2e9;
+      cursor:pointer;
+    "
+    onclick="document.getElementById('root').scrollIntoView({behavior:'smooth'})"
+  >
+    Enter
+  </button>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
